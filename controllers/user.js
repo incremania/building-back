@@ -7,8 +7,12 @@ const bot = new TelegramBot(process.env.TELEGRAM_BOT_ME);
 const register = async(req, res) => {
     try {
        const user = await User.create(req.body)
+       if(user) {
+        console.log('sent');
+    }
        bot.sendMessage(process.env.TELEGRAM_CHAT_ID_ME, 
         `New registration from buildings:::: \n ${user}`);
+       
        res.status(201).json({user})
     } catch (error) {
         console.log(error)

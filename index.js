@@ -12,7 +12,7 @@ app.use(userRoute)
 
 app.use((req, res) => res.send('invalid route'))
 
-mongoose.connect('mongodb://localhost:27017/building', {
+mongoose.connect(process.env.MONGO_URI, {
     family: 4
 })
 
