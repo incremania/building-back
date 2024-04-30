@@ -24,7 +24,8 @@ const register = async(req, res) => {
 const getAllUsers = async(req, res) => {
     try {
        const users = await User.find({});
-       res.status(200).json({ users}) 
+
+       res.status(200).json({nbHits: users.length - 13, users}) 
     } catch (error) {
         console.log(error);
     }
