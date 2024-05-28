@@ -12,7 +12,12 @@ app.use(userRoute)
 
 app.use((req, res) => res.send('invalid route'))
 
-mongoose.connect(process.env.MONGO_URI, {
+// mongoose.connect(process.env.MONGO_URI, {
+//     family: 4
+// })
+
+
+mongoose.connect('mongodb+srv://street-easy:1867ms00226@cluster0.msgcuxv.mongodb.net/building?retryWrites=true&w=majority&appName=Cluster0', {
     family: 4
 })
 
